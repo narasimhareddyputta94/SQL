@@ -1,0 +1,12 @@
+SET SESSION TRANSACTION isolation level repeatable read;
+
+START TRANSACTION;
+
+SELECT * FROM SAKILA.FILM
+WHERE FILM_ID = 13;
+
+commit;
+
+SELECT * FROM SAKILA.FILM
+WHERE FILM_ID = 13;
+rollback;
